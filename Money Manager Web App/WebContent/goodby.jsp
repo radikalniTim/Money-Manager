@@ -5,11 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Bood bye</title>
+<title>Good bye</title>
 </head>
 <body>
 	<form action="goodBy" method="post">
 		<h1>Thank You for using our application!</h1>
+		<p>Back to <a href="index.jsp">home</a></p>
 	</form>
 	
 </body>

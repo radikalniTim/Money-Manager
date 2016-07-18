@@ -1,4 +1,4 @@
-package servlets_pckg;
+package servlets;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,15 +7,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import class_pckg.Money;
-import class_pckg.Person;
+import beans.Money;
+import beans.Person;
 
 /**
  * Servlet implementation class UserData_servlet
  */
-@WebServlet("/UserData_servlet")
-public class UserData_servlet extends HttpServlet {
+@WebServlet("/UserData")
+public class UserData extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private Person newUser;
        
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		   String personFirstName = request.getParameter("firstname");
@@ -23,7 +24,7 @@ public class UserData_servlet extends HttpServlet {
 	       String birthday = request.getParameter("birthday");
 	       String proffesion = request.getParameter("proffesion");        
 	       double monthIncome = Double.parseDouble(request.getParameter("monthIncome"));
-	       
+	       	       
 	       
 	       Person userData = new Person (personFirstName, personLastName, birthday, proffesion);
 	       Money moneyTraffic = new Money (monthIncome);
@@ -33,8 +34,8 @@ public class UserData_servlet extends HttpServlet {
 	       request.setAttribute("proffesion", userData.getProffesion());
 	       request.setAttribute("monthIncome", moneyTraffic.getMonthIncome());
 	       
-	       getServletContext().getRequestDispatcher("/userData_scr.jsp").forward(request,  response);
-	      return;
+	       getServletContext().getRequestDispatcher("/userdata.jsp").forward(request,  response);
+	       return;
 	}
 
 

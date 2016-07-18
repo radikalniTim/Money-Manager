@@ -1,18 +1,13 @@
-package class_pckg;
+package beans;
 
-public class Person 
-{
-
+public class Person {
 	static double money;
 	String firstName = null;
 	String lastName = null;
 	String bDay = null;
 	String Proffesion = null;
 	
-
-	
-	public Person (String firstName, String lastName, String bDay, String Proffesion) 
-	{
+	public Person (String firstName, String lastName, String bDay, String Proffesion) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.bDay = bDay;
