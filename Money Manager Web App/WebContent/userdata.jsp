@@ -25,8 +25,11 @@
 				<td align="right">Monthly income: </td><td> <%= request.getAttribute ("monthIncome") %></td> <!-- pozivanje varijable iz servleta -->
 			</tr>
 		</table>
-		
+
 		<br />
+		
+		<p>Back to <a href="index.jsp">home</a></p>
+
 		
 	</form>
 </body>

@@ -15,7 +15,7 @@
         </form>
     </c:when>    
     <c:otherwise>
-	       <br> Please <a href="login.jsp">login</a> or <a href="register.jsp">register</a> </p>
+	      <p> <br> Please <a href="login.jsp">login</a> or <a href="register.jsp">register</a> </p>
     </c:otherwise>
 </c:choose>
 

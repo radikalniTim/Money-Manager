@@ -8,7 +8,7 @@
 <title>Good bye</title>
 </head>
 <body>
-	<form action="goodBy" method="post">
+	<form action="MainController" method="post">
 		<h1>Thank You for using our application!</h1>
 		<p>Back to <a href="index.jsp">home</a></p>
 	</form>
