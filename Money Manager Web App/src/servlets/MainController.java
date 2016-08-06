@@ -25,12 +25,15 @@ public class MainController extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		button = request.getParameter("button");
-				
+		HttpSession session = request.getSession();
+		
 		switch(button){
 			case("register"):
 				getServletContext().getRequestDispatcher("/register.jsp").forward(request,  response);
 				break;
 			case("cancel"):
+				session = request.getSession();
+				session.invalidate();
 				getServletContext().getRequestDispatcher("/goodby.jsp").forward(request,  response);
 				break;
 			case("submit"):
@@ -39,8 +42,7 @@ public class MainController extends HttpServlet {
 			case("login"):
 				getServletContext().getRequestDispatcher("/Login").forward(request,  response);
 				break;
-			case("logout"):
-				HttpSession session = request.getSession();
+			case("logout"):				
 				session.invalidate();
 				getServletContext().getRequestDispatcher("/goodby.jsp").forward(request,  response);
 				break;
