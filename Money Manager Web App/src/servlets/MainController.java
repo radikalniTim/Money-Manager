@@ -31,18 +31,19 @@ public class MainController extends HttpServlet {
 			case("register"):
 				getServletContext().getRequestDispatcher("/register.jsp").forward(request,  response);
 				break;
+			case("submit"):
+				getServletContext().getRequestDispatcher("/Register").forward(request,  response);
+				break;
+			case("login"):
+				getServletContext().getRequestDispatcher("/Login").forward(request,  response);
+				break;
 			case("cancel"):
 				session = request.getSession();
 				session.invalidate();
 				getServletContext().getRequestDispatcher("/goodby.jsp").forward(request,  response);
 				break;
-			case("submit"):
-				getServletContext().getRequestDispatcher("/UserData").forward(request,  response);
-				break;
-			case("login"):
-				getServletContext().getRequestDispatcher("/Login").forward(request,  response);
-				break;
-			case("logout"):				
+			case("logout"):
+				session = request.getSession();
 				session.invalidate();
 				getServletContext().getRequestDispatcher("/goodby.jsp").forward(request,  response);
 				break;
