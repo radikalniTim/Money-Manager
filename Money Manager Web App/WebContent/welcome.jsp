@@ -7,7 +7,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/menubar.css" type="text/css"/>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/menubar.css" type="text/css"/>
 	<title>Welcome</title>
 	
 	<style type="text/css">
