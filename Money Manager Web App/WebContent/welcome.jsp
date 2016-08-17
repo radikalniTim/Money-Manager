@@ -7,60 +7,40 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/menubar.css" type="text/css"/>
+	<jsp:include page="header.jsp"/>
 	<title>Welcome</title>
 	
-	<style type="text/css">
-		h1 {
-   		 	margin: auto;
-    		width: 100%;
-    		padding: 10px;
-    		text-align: center;
-    		font-size: 400%;
-    	}
-		
-		h2{
-			font-size: 250%;
-			width: 100%;
-    		padding: 10px;
-    		text-align: center;
-		}
-		
-		p {
-			text-decoration: underline;
-			font-size: 150%;
-			width: 100%;
-    		padding: 10px;
-    		text-align: center;
-		}
-	</style>
 </head>
 
 <body>
-	<ul class="menu-bar">
-  		<li style="float: left;"><a href="home.jsp" class="list-links">Home</a></li>
-		<li class="dropdown-left">
-			<a href="#home" class="list-links">New</a>
-			<div class="dropdown-content-left">
-  				<a href="#Category">Category</a>
-  				<a href="#Set">Set</a>
-  				<a href="#Page">Page</a>
-  			</div>	
-		</li>
-		<li style="float: left;"><a href="home.jsp" class="list-links">Options</a></li>
-  		<li class="dropdown-right">
-  			<a href="#user" class="list-links"><c:out value="${session.Scope.username}"/></a>
-  			<div class="dropdown-content-right">
-  				<a href="#settings">Settings</a>
-  				<a href="goodby.jsp">Logout</a>
-  			</div>
-  		</li>  	
-	</ul>
+		<div class="container">
+		<div class="row row-offcanvas row-offcanvas-right">
+			<div class="col-xs-12 col-lg-12">
+			<div class="page-header">
+				<h1>Money Manager <small>personal finances made easy</small></h1>
+			</div>
+		</div>
+		</div>
+		</div>
 
-	<h1>Congratulations!</h1>
-	<h2>You have succsessfully registered to Money manager web application.</h2>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h4>Congratulations!</h4>
+			</div>
+			
+			<div class="col-sm-12 text-center">
+				<h4>You have succsessfully registered to Money manager web application.</h4>
+			</div>
+			<div class="col-sm-12 text-center">
+				<p>Please click on home so You can start editing your profile.</p>
+			</div>
+		</div>	
+	</div>
+
+
 	<br/>
 	<br/>
-	<p>Please click on home so You can start editing your profile.</p>
+	
 </body>
 </html>

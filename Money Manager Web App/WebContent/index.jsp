@@ -7,8 +7,8 @@
 				<h1>Money Manager <small>personal finances made easy</small></h1>
 			</div>
 			<c:choose>
-			    <c:when test="${sessionScope.user != null}">
-			        <div> Welcome <c:out value="${sessionScope.user}"/> </div>
+			    <c:when test="${sessionScope.email != null}">
+			        <div> Welcome <c:out value="${sessionScope.email}"/> </div>
 			        <form action="MainController" method="post">
 			        	<button type="submit" name="button" value="logout">Logout</button>
 			        </form>

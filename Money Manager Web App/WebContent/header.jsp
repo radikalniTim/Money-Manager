@@ -36,11 +36,11 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
       <c:choose>
-     	<c:when test="${sessionScope.user != null}">
-     	   <li><a href="home.jsp">Dashboard</a></li>
-     	
-     		<p class="navbar-text">
-     			<span class="navUsername"><c:out value="${sessionScope.user}"/></span>
+     	<c:when test="${!sessionScope.email.isEmpty() && sessionScope.email != null}"> <!-- BUG - even if user registration was unsuccsessfull, in nav bar user e-mail is shown!!! -->
+     	   <li><a href="home.jsp">Home</a></li>
+     	   <li><a href="usersettings.jsp"> Settings</a></li>  	       
+	        <p class="navbar-text">
+     			<span class="navUsername"><c:out value="${sessionScope.email}"/></span>
      			<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
      		</p>
 	        <form action="MainController" method="post" class="navbar-form navbar-left">

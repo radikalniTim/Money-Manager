@@ -7,31 +7,11 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/menubar.css" type="text/css"/>
+	<jsp:include page="header.jsp"/>
 	<title>Home</title>
 </head>
 
-<body>
-	<ul class="menu-bar">
-  		<li style="float: left;"><a href="home.jsp" class="list-links">Home</a></li>
-		<li class="dropdown-left">
-			<a href="#home" class="list-links">New</a>
-			<div class="dropdown-content-left">
-  				<a href="#Category">Category</a>
-  				<a href="#Set">Set</a>
-  				<a href="#Page">Page</a>
-  			</div>	
-		</li>
-		<li style="float: left;"><a href="options.jsp" class="list-links">Options</a></li>
-  		<li class="dropdown-right">
-  			<a href="#user" class="list-links"><c:out value="${session.Scope.username}"/></a>
-  			<div class="dropdown-content-right">
-  				<a href="usersetting.jsp">Settings</a>
-  				<a href="goodby.jsp">Logout</a>
-  			</div>
-  		</li>  	
-	</ul>
-	
+<body>	
 	<h1 style="font-size: 400%; text-align: center;"> OPTIONS PAGE! </h1>
 </body>
 </html>

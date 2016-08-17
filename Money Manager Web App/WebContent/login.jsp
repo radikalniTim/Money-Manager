@@ -9,8 +9,8 @@
 		
 		<table border="0" align="center">
 			<tr>
-				<td align="right">User name:</td>				
-				<td width="100"><input type="text" name="userName"></td>
+				<td align="right">Your E-mail:</td>				
+				<td width="100"><input type="text" name="email"></td>
 			</tr>
 			<tr>
 				<td align="right">Password:</td>				

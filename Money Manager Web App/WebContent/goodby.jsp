@@ -3,7 +3,7 @@
 <body>
 	<form action="MainController" method="post">
 		<h1>Thank You for using our application!</h1>
-		<p>Back to <a href="index.jsp">home</a></p>
+		<p>Back to <a href="index.jsp">login/register</a></p>
 	</form>
 	
 </body>

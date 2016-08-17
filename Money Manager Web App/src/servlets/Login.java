@@ -18,11 +18,11 @@ public class Login extends HttpServlet{
 	private static final long serialVersionUID = -8766153369545932598L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		String userName = request.getParameter("userName");
+		String email = request.getParameter("email");
 		String userPassword = request.getParameter("password");
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("user", userName);
+		session.setAttribute("email", email);
 		session.setMaxInactiveInterval(30*60);
 		response.sendRedirect("index.jsp");
 	}
