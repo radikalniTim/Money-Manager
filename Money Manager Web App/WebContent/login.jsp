@@ -6,6 +6,9 @@
 		<h2>
 			<p style="text-align:center">Please login</p>
 		</h2> 
+	      <c:if test="${errorMsg != null}">
+	     	 <center><c:out value="${errorMsg}"/></center>
+	  	  </c:if> 
 		
 		<table border="0" align="center">
 			<tr>

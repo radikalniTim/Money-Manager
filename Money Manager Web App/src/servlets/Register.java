@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import beans.Person;
+import beans.User;
 import database.ConnectionHelper;
 
 /**
@@ -19,7 +19,7 @@ import database.ConnectionHelper;
 @WebServlet("/Register")
 public class Register extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private Person newUser;
+	private User newUser;
 	private Connection connection;
 	
 	private String firstName;
