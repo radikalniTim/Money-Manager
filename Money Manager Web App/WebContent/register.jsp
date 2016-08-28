@@ -16,6 +16,9 @@
 </head>
 
 <body>
+	      <c:if test="${errorMsg != null}">
+	     	 <center><c:out value="${errorMsg}"/></center>
+	  	  </c:if> 
 	<form action="MainController" method="post">
 		
 		<div class="container">

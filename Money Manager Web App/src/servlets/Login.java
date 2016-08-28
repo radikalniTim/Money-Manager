@@ -21,7 +21,7 @@ import components.EncryptionHelper;
 import database.ConnectionHelper;
 
 @WebServlet("/Login")
-public class Login extends HttpServlet{
+public class Login extends HttpServlet implements FormInputInterface{
 
 	private static final long serialVersionUID = -8766153369545932598L;
 	
@@ -32,14 +32,15 @@ public class Login extends HttpServlet{
 	private User loggedUser;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		initDatabaseConnection();
 		encryptionHelper = new EncryptionHelper();
-		email = request.getParameter("email");
-		password = request.getParameter("password");
+		getInputValues(request);
 		
-		if(checkLoginDetails()){
+		if(checkLoginDetails() && !isAnyFieldEmpty()){
 			HttpSession session = request.getSession();
 			session.setAttribute("email", loggedUser.getEmail());
 			session.setAttribute("role", loggedUser.getRole());
+			session.setAttribute("fullname", loggedUser.getFullName());
 			session.setMaxInactiveInterval(30*60);
 			response.sendRedirect("home.jsp");
 		}else{
@@ -50,7 +51,6 @@ public class Login extends HttpServlet{
 	}
 	
 	private boolean checkLoginDetails(){
-		connection = ConnectionHelper.getDatabaseConnection();
 		final String query = "SELECT * from users JOIN users_roles ON users.role_id = users_roles.idusers_roles WHERE email = ? AND password = ?";
 		PreparedStatement ps;
 		try {
@@ -77,4 +77,25 @@ public class Login extends HttpServlet{
 		}
 		return false;
 	}
+	
+	@Override
+	public void initDatabaseConnection() {
+		connection = ConnectionHelper.getDatabaseConnection();		
+	}
+
+	@Override
+	public void getInputValues(HttpServletRequest request) {
+		email = request.getParameter("email");
+		password = request.getParameter("password");		
+	}
+
+	@Override
+	public boolean isAnyFieldEmpty() {
+		if (email.isEmpty() || password.isEmpty()){
+			return true;
+		}else{
+			return false;
+		}	
+	}
+
 }

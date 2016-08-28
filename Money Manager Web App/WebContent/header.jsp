@@ -40,16 +40,18 @@
      	   <li><a href="home.jsp">Home</a></li>
      	   <li><a href="usersettings.jsp"> Settings</a></li>  	       
 	        <p class="navbar-text">
-     			<span class="navUsername"><c:out value="${sessionScope.email}"/></span>
+     			<span class="navUsername"><c:out value="${sessionScope.fullname}"/></span>
      			<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
      		</p>
 	        <form action="MainController" method="post" class="navbar-form navbar-left">
-	        	<button type="submit" name="button" value="logout" class="btn btn-default">Logout</button>
+	        	<button type="submit" name="button" value="logout" class="btn btn-danger">Logout</button>
 	        </form>
          </c:when>    
 	     <c:otherwise>
      		<li><a href="login.jsp">Login</a></li>
-     		<li><a href="register.jsp" >Register</a></li>
+			<form action="register.jsp" class="navbar-form navbar-left">
+	        	<button type="submit" name="button" value="register" class="btn btn-success">Register</button>
+	        </form>
   	     </c:otherwise>
   	  </c:choose> 
       </ul>
